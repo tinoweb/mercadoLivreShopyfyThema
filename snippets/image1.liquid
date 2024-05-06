@@ -1,0 +1,135 @@
+<div class="ui-pdp-container__row mt-16">
+    <div class="ui-pdp-gallery">
+        <div class="ui-pdp-carousel-snapped">
+            <section class="andes-carousel-snapped__container andes-carousel-snapped__container--full andes-carousel-snapped__container--strict-boundaries"
+                aria-roledescription="Carrusel" aria-label="Galeria de fotos">
+                <div class="andes-carousel-snapped__header"></div>
+                <div class="andes-carousel-snapped__controls-wrapper">
+                    <div class="slick-carousel andes-carousel-snapped andes-carousel-snapped--scroll-hidden">
+                        <!-- Loop through product images -->
+                        {% for image in product.images %}
+                        <div style="width: 383px; height: 383px;" role="group"
+                            class="andes-carousel-snapped__slide ui-pdp-carousel-snapped__slide {% if forloop.first %}active{% endif %}"
+                            aria-label="{{ forloop.index }} de {{ product.images.size }}" style="" data-slider="{{ forloop.index0 }}">
+                            <a href="#" class="image ui-pdp-gallery--horizontal">
+                                <img style="width: 100%; height: 100%;" src="{{ image.src | img_url: '500x500' }}"
+                                    class="ui-pdp-image ui-pdp-gallery--horizontal"
+                                    alt="Imagem {{ forloop.index }} de {{ product.images.size }} de {{ product.title }}">
+                            </a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+            <div class="ui-pdp-carousel-snapped__counter">
+                <span class="pagination-current">1</span>/<span class="pagination-total">{{ product.images.size }}</span>
+            </div>
+        </div>
+
+        <form class="ui-pdp-bookmark ui-pdp-bookmark__link-bookmark ui-pdp-bookmark__circle-bookmark" method="post"
+            action="/cart/add"> <input type="hidden" name="id" value="{{ product.variants.first.id }}"> <input type="hidden"
+                name="quantity" value="1"><input type="hidden" name="_csrf"
+                value="Yh3QdycT-3F-uSXpeaT24vAMsbcrrPkaE3wI"><button
+                class="ui-pdp-bookmark__link-bookmark" role="switch" type="submit" aria-checked="false"><svg
+                    class="ui-pdp-icon ui-pdp-icon--bookmark ui-pdp-bookmark__icon-bookmark"
+                    xmlns="http://www.w3.org/2000/svg" width="22" height="20" viewBox="0 0 22 20"><g
+                        stroke-width="1.0" fill="none"><use href="#bookmark"></use></g></svg><svg
+                    class="ui-pdp-icon ui-pdp-icon--bookmark ui-pdp-bookmark__icon-bookmark-fill"
+                    xmlns="http://www.w3.org/2000/svg" width="22" height="20" viewBox="0 0 22 20"><g
+                        stroke-width="1.0" fill-rule="evenodd"><use href="#bookmark"></use></g></svg><small
+                    class="ui-pdp-bookmark__label"><span
+                        class="andes-visually-hidden">Adicionar aos favoritos</span></small></button></form>
+
+        <div class="ui-pdp-share" id="link__label1">
+            <a class="ui-pdp-share__link" title="Compartilhar" id="link__label1"><svg
+                    class="ui-pdp-icon ui-pdp-icon--share-gallery" xmlns="http://www.w3.org/2000/svg" width="40"
+                    height="40" viewBox="0 0 40 40">
+                    <use href="#sharegallery"></use>
+                </svg></a>
+        </div>
+    </div>
+
+    <!-- Adicionando a nova seção para os dots -->
+  <center style="width: 100%;">
+  <div class="slick-dots-container">
+        <!-- Dots serão dinamicamente adicionados aqui -->
+    </div></center>  
+</div>
+
+<style>
+    /* Customize the color and style of slick dots */
+    .slick-dots-container {
+        display: flex;
+        justify-content: center;
+        text-align: center; /* Adicione esta linha para centralizar */
+        margin-top: 10px; /* Adicione algum espaçamento a partir do contador */
+    }
+
+    .slick-dots-container .slick-dot {
+        width: 10px;
+        height: 10px;
+        background-color: #3483fa;
+        border-radius: 50%;
+        margin: 0 5px;
+        cursor: pointer;
+        opacity: 0.5;
+        transition: opacity 0.3s ease;
+    }
+
+    .slick-dots-container .slick-dot.active {
+        opacity: 1;
+        width: 11px;
+        height: 11px;
+    }
+</style>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+    $(document).ready(function() {
+        var totalSlides = {{ product.images.size }};
+        var currentSlide = 0;
+
+        function updateDots() {
+            $('.slick-dot').removeClass('active');
+            $('.slick-dot[data-index="' + currentSlide + '"]').addClass('active');
+        }
+
+        // Inicializa o Slick Carousel
+        $('.slick-carousel').slick({
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            dots: false, // Desabilita os dots padrão
+            arrows: false, // Remove as setas de navegação
+            speed: 300, // Ajusta a velocidade de transição
+        });
+
+        // Adiciona dinamicamente dots com base no número de slides
+        for (var i = 0; i < totalSlides; i++) {
+            $('.slick-dots-container').append('<div class="slick-dot" data-index="' + i + '"></div>');
+        }
+
+        // Inicializa os dots
+        updateDots();
+
+        // Atualiza os dots após deslizar para a próxima imagem
+        $('.slick-carousel').on('afterChange', function (event, slick, currentSlide) {
+            $('.pagination-current').text(currentSlide + 1);
+            updateDots();
+        });
+
+        // Atualiza os dots ao clicar em um dot específico
+        $('.slick-dot').on('click', function () {
+            currentSlide = parseInt($(this).attr('data-index'));
+            $('.slick-carousel').slick('slickGoTo', currentSlide);
+            updateDots();
+        });
+
+        // Atualiza os dots ao deslizar manualmente
+        $('.slick-carousel').on('swipe', function (event, slick, direction) {
+            currentSlide = slick.currentSlide;
+            updateDots();
+        });
+    });
+</script>

@@ -1,0 +1,25 @@
+<style>
+
+input {width: 98%;
+    height: 35px;
+    border: 1px solid #c3c3c3;
+    border-radius: 5px;}
+  
+</style>
+
+{% render "cadastro" %}
+
+
+<!---->
+
+
+ <script>
+        const nat5Button = document.getElementById("nat5");
+        const sumir1Element = document.getElementById("reload2");
+        const cadastroElement = document.getElementById("cadastro");
+
+        nat5Button.addEventListener("click", function() {
+            sumir1Element.style.display = "none";
+            cadastroElement.style.display = "block";
+        });
+    </script>

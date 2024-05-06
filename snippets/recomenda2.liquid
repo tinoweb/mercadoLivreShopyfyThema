@@ -1,0 +1,32 @@
+
+<div class="ui-recommendations-carousel-snapped mb-64 pb-16" style="--max-card-height: 364.078125px;"><div class="ui-recommendations-carousel-snapped__header"><div class="ui-recommendations-carousel-snapped__header-titles"><h2 class="ui-recommendations-title">Quem viu este produto também comprou</h2></div></div><section  id="meuCarrossel"  aria-label="Quem viu este produto também comprou" aria-roledescription="Carrossel" class="andes-carousel-snapped__container andes-carousel-snapped__container--content andes-carousel-snapped__container--with-controls andes-carousel-snapped__container--arrows-visible" id=":r2f:"><div class="andes-carousel-snapped__header"></div><div class="andes-carousel-snapped__controls-wrapper"><button class="andes-carousel-snapped__control andes-carousel-snapped__control--previous andes-carousel-snapped__control--size-large andes-carousel-snapped__control--disabled" type="button" aria-label="Anterior" disabled=""><span aria-hidden="true" class="andes-carousel-snapped__control__icon-container"><svg aria-hidden="true" width="32" height="32" viewBox="0 0 32 32" fill="rgba(0, 0, 0, 0.9)"><path d="M20.0549 6.99999L11.0596 15.9953L20.0642 25L19.0036 26.0607L8.93823 15.9953L18.9942 5.93933L20.0549 6.99999Z" fill="rgba(0, 0, 0, 0.9)"></path></svg></span></button><div class="andes-carousel-snapped andes-carousel-snapped--scroll-hidden"><div class="andes-carousel-snapped__wrapper" style="display: flex; will-change: transform; flex-direction: row; transition: transform 0ms ease 0s; transform: translate3d(0px, 0px, 0px);">
+  
+    {% assign current_product_tags = product.tags | split: ', ' %}
+{% for product in collections.all.products %}
+  {% assign product_tags = product.tags | split: ', ' %}
+  {% for tag in current_product_tags %}
+    {% if product_tags contains tag %}
+  <div role="group" class="andes-carousel-snapped__slide andes-carousel-snapped__slide--spacing-12" aria-label="20 de 20" data-slider="19" style="width: 227.2px; margin-right: 12px;"><div class="ui-recommendations-card ui-recommendations-card--vertical">
+    <div style="width: 224px; height: 224px;" class="ui-recommendations-card__image-container">
+    
+
+   <img style="width: auto; height: auto; padding: 40px;" src="{{ product.featured_image.src | product_img_url: 'large' }}" alt="{{ product.title }} - Image {{ forloop.index }}" srcset="{{ product.featured_image | img_url: 'master' }}" class="ui-recommendations-card__image">
+
+
+  </div><div class="ui-recommendations-card__content-and-hidden"><div class="ui-recommendations-card__content"><div class="ui-recommendations-card__price-block"><div class="ui-recommendations-card__price-top"><div class="ui-recommendations-card__price-and-discount"><span class="andes-money-amount ui-recommendations-card__price andes-money-amount--cents-superscript andes-money-amount--compact" style="font-size: 24px;"><span class="andes-visually-hidden">657 reais</span><span class="andes-money-amount__currency-symbol" aria-hidden="true">R$</span><span class="andes-money-amount__fraction" aria-hidden="true">{% assign price_parts = product.price | money_without_currency | split: "," %} {{ price_parts[0] }}</span>
+  <span class="andes-visually-hidden" aria-hidden="true">,</span>
+    <span class="andes-money-amount__cents andes-money-amount__cents--superscript-24" aria-hidden="true" style="font-size: 12px; margin-top: 3px;">{{ price_parts[1] }}</span>
+  
+  </span></div></div><div class="ui-recommendations-card__installments"><span class="ui-recommendations-card__installments"><span class="ui-recommendations-card__installments-original-price"></span><span class="ui-recommendations-card__installments-price"><span class="ui-recommendations-card__installments-quantity"></span><span class="ui-recommendations-card__installments-middle-text"></span><span class="andes-money-amount andes-money-amount--cents-comma andes-money-amount--compact" style="font-size: 14px;"><span class="andes-visually-hidden">63 reais com 70 centavos</span><span style="color: #00a650;"class="andes-money-amount__fraction" aria-hidden="true">10x R$ {% assign installment_price = product.price | divided_by: 10 %}            {% assign price_parts = installment_price | money_without_currency | split: "," %} {{ price_parts[0] }} </span><span aria-hidden="true" style="color: #00a650;">,</span><span style="color: #00a650;" class="andes-money-amount__cents" aria-hidden="true">{{ price_parts[1] | default: "00" }}   {% assign installment_price = installment_price | plus: product.price | divided_by: 10 %} sem juros</span></span>&nbsp;</span></span></div></div><span class="ui-recommendations-card__shipping"><span class="ui-recommendations-card__shipping-text">Frete grátis</span></span><p class="ui-recommendations-card__title"><a data-testid="onclick-item-link" href="{{ shop.url }}{{ product.url }}" class="ui-recommendations-card__link" tabindex="-1">{{ product.title }}</a></p></div><div class="ui-recommendations-card__hidden"></div></div></div></div>
+      {% endif %}
+  {% endfor %}
+{% endfor %}
+
+
+
+</div></div>
+    
+    
+   
+  
+  </div></section></div>

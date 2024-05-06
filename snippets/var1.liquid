@@ -1,0 +1,30 @@
+<style>
+
+   .seta-select { 
+     font-size: 17px;
+     width: 100%;
+     -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: transparent url('icone-seta.png') no-repeat right center; /* Substitua 'icone-seta.png' pelo ícone desejado */
+    padding-right: 20px;}
+  
+</style>
+
+{% if product.variants.size > 1 %}
+<div id="abrir-select11" class="ui-pdp-variations__container mt-15 pl-16 pr-16">
+  <span data-testid="action-row-span" class="ui-pdp-action-row ui-pdp-variations ui-pdp-action-row--primary" role="button" tabindex="0">
+    <span class="ui-pdp-action-row__label">{{ product.options.first | escape }}:</span>
+    <div class="ui-pdp-action-row__content">
+      <select class="seta-select" style="background: none; border: none;">
+        {% for variant in product.variants %}
+          <option class="ui-pdp-action-row__selected ui-pdp-color--BLACK" value="{{ variant.title }}">{{ variant.title }}</option>
+        {% endfor %}
+      </select>
+      <svg class="ui-pdp-icon ui-pdp-icon--chevron ui-pdp-icon--chevron-right" viewBox="0 0 9 14" xmlns="http://www.w3.org/2000/svg">
+        <use href="#chevron"></use>
+      </svg>
+    </div>
+  </span>
+</div>
+{% endif %}

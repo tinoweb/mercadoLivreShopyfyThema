@@ -1,0 +1,152 @@
+
+
+{% if section.settings.enable_appmobile %}
+<section style="display: ;" id="minhaSecao" class="download-app-banner-container" role="dialog" aria-label="Instale o app e compre de um jeito mais fácil e rápido"><div class="download-app-top-banner-wrapper"><img width="52" height="52" decoding="async" src="https://http2.mlstatic.com/frontend-assets/ml-web-navigation/ui-navigation/6.5.18/mercadolibre/modal-logo-120x120.jpg" class="download-app-top-banner-icon" alt=""><div class="download-app-top-banner-column"><span class="download-app-top-banner-title" aria-hidden="true">{{ section.settings.text_appmobile }}</span><div class="download-app-top-banner-row"><div class="download-app-top-banner-header"><div class="download-app-top-banner-rating-container" aria-label="Qualificação [4.8] de 5"><span class="clipped"> Qualificação [4.8] de 5</span><div class="download-app-top-banner-rating-row" aria-hidden="true"><span class="download-app-top-banner-rating">4.8</span><i class="download-app-top-banner-rating-icon"></i></div></div><span class="download-app-top-banner-comments">+17 M opiniões</span></div></div></div>  {% if section.settings.bnt_appmobile %}  <a onclick="ocultarSecao()" href="#" id="download-app-top-banner-button" class="download-app-top-banner-button">{{ section.settings.textbnt_appmobile }}</a> {% endif %} </div></section>
+{% endif %}
+
+<style>
+@media screen and (max-width: 767px){
+
+  .download-app-top-banner-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 74px;
+    background: rgba(0,0,0,.8980392157);
+    gap: 16px;
+    padding: 8px 16px;
+    box-sizing: border-box;
+}
+
+  .download-app-top-banner-wrapper .download-app-top-banner-icon {
+    display: inline-block;
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.18);
+    vertical-align: middle;
+}
+
+
+.download-app-top-banner-wrapper .download-app-top-banner-column {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+  .download-app-top-banner-wrapper .download-app-top-banner-column .download-app-top-banner-title {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    color: #fff;
+    font-family: "Proxima Nova",-apple-system,"Roboto",Arial,sans-serif;
+    margin-bottom: 2px;
+}
+
+
+  .download-app-top-banner-wrapper .download-app-top-banner-row {
+    display: flex;
+    flex-direction: row;
+}
+
+  .download-app-top-banner-wrapper .download-app-top-banner-column .download-app-top-banner-header {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    align-items: center;
+}
+
+  .clipped {
+    position: absolute;
+    z-index: -1;
+    border: 0;
+    clip: rect(0 0 0 0);
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+    margin: 0 -1px -1px 0;
+    overflow: hidden;
+    padding: 0;
+    display: block;
+}
+
+  .clipped {
+    position: absolute;
+    z-index: -1;
+    border: 0;
+    clip: rect(0 0 0 0);
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+    margin: 0 -1px -1px 0;
+    overflow: hidden;
+    padding: 0;
+    display: block;
+}
+
+
+  .download-app-top-banner-wrapper .download-app-top-banner-column .download-app-top-banner-header .download-app-top-banner-rating-row {
+    display: flex;
+}
+
+  .download-app-top-banner-wrapper .download-app-top-banner-column .download-app-top-banner-header .download-app-top-banner-rating-row .download-app-top-banner-rating {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18px;
+    color: rgba(255,255,255,.5490196078);
+}
+
+  .download-app-top-banner-wrapper .download-app-top-banner-column .download-app-top-banner-header .download-app-top-banner-rating-row .download-app-top-banner-rating-icon {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 8px;
+    background-image: url(https://http2.mlstatic.com/frontend-assets/ml-web-navigation/ui-navigation/6.5.16/mercadolibre/gray-star.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    margin-bottom: 1px;
+}
+
+  .download-app-top-banner-wrapper .download-app-top-banner-column .download-app-top-banner-header .download-app-top-banner-comments {
+    color: rgba(255,255,255,.5490196078);
+    text-align: center;
+    font-family: "Proxima Nova",-apple-system,"Roboto",Arial,sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+  .download-app-top-banner-wrapper .download-app-top-banner-button {
+    color: #fff;
+    text-align: center;
+    font-family: "Proxima Nova",-apple-system,"Roboto",Arial,sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 16px;
+    padding: 9px 12px 7px 12px;
+    display: flex;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    background-color: #3483fa;
+    text-decoration: none;
+}
+
+
+  
+}
+</style>
+
+ <script>
+    // Função para ocultar a seção pelo ID
+    function ocultarSecao() {
+      var secao = document.getElementById('minhaSecao');
+      if (secao) {
+        secao.style.display = 'none';
+      }
+    }
+  </script>

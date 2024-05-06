@@ -1,0 +1,141 @@
+<!------ modelo Loja Oficial ------->
+
+
+<div id="product-item-get">
+{% render "mobile1" %}
+{% render "desktop1" %}
+</div>
+
+<div  id="vendedor-item-get" style="display: none;">
+{% render "page-vendedor1" %}
+</div>
+
+
+
+<script>
+        function toggleDisplay(){
+            // Obtenha as referências dos elementos
+            var productItem = document.getElementById("product-item-get");
+            var vendedorItem = document.getElementById("vendedor-item-get");
+
+            // Verifique se o display atual é "none" para decidir o próximo estado
+            if (productItem.style.display === "none") {
+                // Se o produto está oculto, exiba-o e oculte o vendedor
+                productItem.style.display = "block";
+                vendedorItem.style.display = "none";
+            } else {
+                // Se o produto está visível, oculte-o e exiba o vendedor
+                productItem.style.display = "none";
+                vendedorItem.style.display = "block";
+            }
+        }
+    </script>
+
+
+
+
+      <script>
+        function toggleDisplay2() {
+            // Obtenha as referências dos elementos
+            var productItem2 = document.getElementById("vendedor-item-get");
+            var vendedorItem2 = document.getElementById("product-item-get");
+
+            // Verifique se o display atual é "none" para decidir o próximo estado
+            if (productItem2.style.display === "block") {
+                // Se o produto está oculto, exiba-o e oculte o vendedor
+                productItem2.style.display = "none";
+                vendedorItem2.style.display = "block";
+            } else {
+                // Se o produto está visível, oculte-o e exiba o vendedor
+                productItem2.style.display = "block";
+                vendedorItem2.style.display = "none";
+            }
+        }
+    </script>
+
+{% schema %}
+{
+    "name": "Config. Produto",
+    "settings": [
+         {
+            "type": "header",
+            "content": "Suporte e Desenvolvimento.",
+            "info": "Dev, ScriptBank: telegram @devfull22 / telegram @scriptbank99 / WhatsApp 69 999689939"
+        },
+        {
+            "type": "header",
+            "content": "Modelo Loja Oficial Mercado Livre.",
+            "info": "Voce esta usando o modelo de Loja Oficial Mercado Livre, Voce pode mudar para vendedor mercado livre!"
+        },
+         {
+            "type": "header",
+            "content": "Configuraçoes do vendedor",
+            "info": "Logo, Banner, Nome, Vendas"
+        },
+        {
+            "type": "text",
+            "label": "URL Logo do Vendedor",
+            "id": "logo_loja",
+             "default": "https://http2.mlstatic.com/D_NQ_NP_872822-MLA71099612619_082023-T.webp"
+        },
+        {
+            "type": "text",
+            "label": "URL Banner do vendedor",
+            "id": "banner_loja",
+           "default": "https://http2.mlstatic.com/storage/official-stores-images/acheipneus/background20230808134441.jpg"
+        },
+        {
+            "type": "text",
+            "label": "Nome do Vendedor",
+            "id": "name_loja",
+            "default": "Achei Pneus"
+        },
+         {
+            "type": "text",
+            "label": "Quantidade de vendas do vendedor",
+            "id": "vendas_loja",
+            "default": "2mil"
+        },
+        {
+            "type": "header",
+            "content": "Configuraçoes de Dowload de aplicativo",
+            "info": "Hablitar, mudar texto, remover botao"
+        },
+        {
+            "type": "checkbox",
+            "label": "Habilitar APP MOBILE",
+            "id": "enable_appmobile",
+            "default": true
+        },
+        {
+            "type": "text",
+            "label": "texto APP MOBILE",
+            "id": "text_appmobile",
+            "default": "Instale o app e compre de um jeito mais fácil e rápido"
+        },
+        {
+            "type": "checkbox",
+            "label": "Habilitar Botao (instalar)",
+            "id": "bnt_appmobile",
+            "default": true
+        },
+        {
+            "type": "text",
+            "label": "texto Botao (instalar)",
+            "id": "textbnt_appmobile",
+            "default": "instalar"
+        },
+         {
+         "type": "checkbox",
+         "label": "Habilitar Gatilho de Escassez",
+        "id": "enable_escassez",
+         "default": false
+         }
+
+         
+      
+       
+    ]
+}
+{% endschema %}
+

@@ -1,0 +1,24 @@
+<style>
+
+@media screen and (max-width: 767px){
+
+  #escassez {margin-bottom: 20px;}
+}
+
+  @media screen and (min-width: 768px){
+
+  #escassez {margin-left: 0; margin-top: 20px;}
+    
+  }
+
+  
+</style>
+{% if section.settings.enable_escassez %}
+<div id="escassez" class="ui-pdp-promotions-progress ml-16 mb-12 mt-custom-20">
+  <div class="ui-pdp-promotions-progress__bar ui-pdp-background-color--BLACK_10">
+    <div class="progress ui-pdp-background-color--VIOLET_600" style="width: 79%;"></div>
+  </div>
+  <div class="ui-pdp-promotions-progress__status"><span class="sold">79% vendido</span><span class="remaining">Restam
+      <span id="timer69" class="timer">02:59:01</span></span></div>
+</div>
+{% endif %}

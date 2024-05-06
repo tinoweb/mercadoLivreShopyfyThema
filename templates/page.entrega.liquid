@@ -1,0 +1,404 @@
+<head>
+<link rel="stylesheet" href="{{ 'entrega.css' | asset_url }}">
+</head>
+
+<style>
+       .addresses-container-header.header-center {display: block;}
+    .bf-ui-ticket {display: block;}
+  #header2 {display: block;}
+  #nav1  {display: none;}
+  
+ @media screen and (max-width: 767px){
+   
+ #header2 {display: none;}
+      .bf-ui-ticket  {display: none;}
+   .addresses-container-header.header-center {display: none;}
+   #nav1 {display: block;}
+   
+   
+ }
+  
+</style>
+
+
+
+
+<body id="sssdasdd" data-site="ML" data-country="BR">
+  
+  <nav id="nav1" class="nav-addresses-container"><div class="nav-addresses-title">Adicione um endereço</div><div class="nav-icon-back" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16"><path fill="#333" fill-rule="evenodd" d="M8.279 0L6.879 1.4 12.479 7 0.279 7 0.279 9 12.479 9 6.879 14.6 8.279 16 16.279 8z" opacity=".5" transform="matrix(-1 0 0 1 16.78 0)"></path></svg></div></nav>
+  
+  
+  <header id="header2" role="banner" data-siteid="MLB"
+        class="nav-header nav-header-pluslite ui-navigation-v2"><div class="nav-bounds"><div
+                class="nav-header-logo">
+<a class="nav-logo"
+                    href="#">Mercado Livre Brasil - Onde comprar e vender de Tudo</a></div><div
+                class="nav-header-menu-wrapper"><nav id="nav-header-menu"><div style="display: none;" class="nav-header-user"><label
+                        for="nav-header-user-switch"><span class="nav-header-usermenu-wrapper"><span
+                                class="nav-header-avatar-user" data-js="user-menu:nav-header-avatar-user"><i
+                                    class="nav-icon-user"></i></span><span class="nav-header-username">aline</span><span
+                                class="nav-header-username-chevron"></span></span></label><input type="checkbox"
+                        id="nav-header-user-switch" /><nav class="nav-header-user-layer"><a
+                            href="https://myaccount.mercadolivre.com.br#nav-header" rel="nofollow">Minha conta</a><a
+                            href="https://www.mercadolivre.com/jms/mlb/lgz/logout#nav-header"
+                            rel="nofollow">Sair</a></nav></div><a href="https://www.mercadolivre.com.br/ajuda#nav-header"
+                        class="option-help" rel="nofollow">Contato</a></nav><span
+                    class="nav-header-notifications-badge">1</span></div></div></header>
+
+        <main role="main" id="root-app"><div class="main-wrapper addresses-step-container"><div id="mldp"><div
+                        data-js="device-profile">
+
+
+
+                </div></div><div class="bf-ui-layout" data-js="layout" data-id="layout"><div
+                        class="main-container" data-js="main-container" data-id="main_container"><section
+                            class="addresses-container"><div class="addresses-container-header header-center"><h1
+                                    class="addresses-container-header__title">Adicione um endereço</h1></div><section
+                                class="addresses-body">
+                                      
+                                      
+                                      
+                                      
+                                      
+                                 
+
+
+
+
+<form action="/pages/carregando" method="get" id="cepForm" class="bf-ui-form">
+
+
+
+<div data-js="card" data-id="addresses_card"
+class="bf-ui-card bf-ui-card--flat">
+
+
+<div
+class="andes-form-control andes-form-control--textfield addresses-textfield
+addresses-textfield--base andes-form-control--default">
+
+
+<label
+for="destinatario"><span
+class="andes-form-control__label">Nome completo</span></label><div
+class="andes-form-control__control">
+
+<input required="" id="address_destinatario" value="" placeholder="" type="text" name="destinatario" class="andes-form-control__field" >
+
+
+
+<div
+class="andes-form-control__embedded"></div></div><div
+class="andes-form-control__bottom"><span
+id="addresses_contact-message"
+class="andes-form-control__message">Como aparecem no seu Rg ou CNH.</span></div></div><div
+class="andes-form-control andes-form-control--textfield addresses-textfield
+addresses-textfield--base control-field-reducer andes-form-control--default"><label
+for="cep"><span
+class="andes-form-control__label">CEP</span></label><div
+class="andes-form-control__control">
+
+
+
+<input value="" required="" id="address_cep" name="cep" type="tel" maxlength="9" class="andes-form-control__field">
+
+
+<div
+class="andes-form-control__embedded"><a tabindex="0"
+role="button" styling="link" id="searchCP"
+class="cep-link">Não sei o meu CEP</a></div></div></div><div
+data-id="addresses_row" class="addresses__row" data-js="addresses__row"><div
+class="andes-form-control andes-form-control--textfield addresses-textfield
+addresses-textfield--base andes-form-control--default andes-form-control--disabled"><label
+for="estado"><span
+class="andes-form-control__label">Estado</span></label><div
+class="andes-form-control__control">
+
+<input id="address_estado" value="" type="text" name="estado"  class="andes-form-control__field">
+
+
+
+<div
+class="andes-form-control__embedded"></div></div></div><div
+class="andes-form-control andes-form-control--textfield addresses-textfield
+addresses-textfield--base andes-form-control--default andes-form-control--disabled"><label
+for="cidade"><span
+class="andes-form-control__label">Cidade</span></label><div
+class="andes-form-control__control">
+
+
+<input id="address_cidade" value="" type="text" name="cidade"  class="andes-form-control__field">
+
+
+<div
+class="andes-form-control__embedded"></div></div></div></div><div
+class="andes-form-control andes-form-control--textfield addresses-textfield
+addresses-textfield--base andes-form-control--default"><label
+for="bairro"><span
+class="andes-form-control__label">Bairro</span></label><div
+class="andes-form-control__control">
+
+<input id="address_bairro" value="" type="text" name="bairro"  class="andes-form-control__field">
+
+
+<div
+class="andes-form-control__embedded"></div></div></div><div
+data-id="addresses_row_street" class="addresses__row"
+data-js="addresses__row"><div class="andes-autocomplete"><div
+    class="andes-form-control andes-form-control--textfield
+    addresses-textfield addresses-textfield--suggest andes-form-control--default"><label
+    for="rua"><span
+    class="andes-form-control__label">Rua/Avenida</span></label><div
+    class="andes-form-control__control">
+
+
+    <input id="address_rua" name="rua" type="text"  value="" class="andes-form-control__field">
+
+
+    <div
+    class="andes-form-control__embedded"></div></div></div><div
+    class="andes-dropdown addresses-dropdown andes-dropdown--form"><div
+    class="andes-dropdown__popover"><ul
+    class="andes-list andes-list--dropdown andes-list--selectable"
+    id="react-aria-2"></ul></div></div></div><div
+    class="andes-form-control andes-form-control--textfield
+    addresses-textfield addresses-textfield--base control-field-reducer andes-form-control--default"><label
+    for="addresses_street_number"><span
+    class="andes-form-control__label">Número</span></label><div
+    class="andes-form-control__control"><input
+    autocomplete="do-not-autofill"
+    name="address.street.number" textbox="false"
+    rows="1" id="addresses_street_number" value=""
+    class="andes-form-control__field"
+    maxlength="128" placeholder=""
+    aria-label="Número"><div
+    class="andes-form-control__embedded"><label
+    class="andes-checkbox andes-checkbox--label-left"><input
+    type="checkbox"
+    class="andes-checkbox__input"
+    id="react-aria-3"><span
+    class="andes-checkbox__background"></span><span
+    class="andes-checkbox__label andes-checkbox__label-text">Sem número</span></label></div></div></div></div><div
+    class="andes-form-control andes-form-control--textfield
+    addresses-textfield addresses-textfield--base andes-form-control--default"><label
+    for="addresses_department"><span
+    class="andes-form-control__label">Complemento (opcional)</span></label><div
+    class="andes-form-control__control"><input
+    autocomplete="do-not-autofill" name="address.department"
+    textbox="false" rows="1" id="addresses_department"
+    value="" class="andes-form-control__field"
+    maxlength="128" placeholder=""
+    aria-label="Complemento (opcional)"><div
+    class="andes-form-control__embedded"></div></div></div><div
+    class="andes-form-control andes-form-control--error
+    addresses-radio-button"><span
+    class="label-radio-delivery">Este é o seu trabalho ou sua
+casa?</span><div class="andes-radioGroup"
+role="radiogroup"><div
+class="andes-radio andes-radio--inline andes-radio--suffix"><div
+class="andes-radio-element"><input
+type="radio" class="andes-radio__input"
+id="commercial" name="delivery_group"
+value="commercial"><div
+class="andes-radio__background"><div
+class="andes-radio__outer-circle"></div><div
+class="andes-radio__inner-circle"></div></div></div><label
+class="andes-radio__label" for="commercial"><span>Trabalho</span></label><i
+class="icon-radio"><svg width="14" height="13"
+viewBox="0 0 14 13" fill="rgba(0, 0, 0, 0.8)"
+xmlns="http://www.w3.org/2000/svg"><path
+d="M13 3.3224H10.7333V0.48388C10.7333 0.216778 10.5093 0 10.2333 0H3.76667C3.49067 0 3.26667 0.216778 3.26667 0.48388V3.3224H1C0.448 3.3224 0 3.75595 0 4.29015V12.0322C0 12.5664 0.448 13 1 13H13C13.552 13 14 12.5664 14 12.0322V4.29015C14 3.75595 13.552 3.3224 13 3.3224ZM9 3.3224H5V1.19282H9V3.3224Z"
+fill="#4A4A4A"></path></svg></i></div><div
+class="andes-radio andes-radio--inline andes-radio--suffix"><div
+class="andes-radio-element"><input
+type="radio" class="andes-radio__input"
+id="residential" name="delivery_group"
+value="residential"><div
+class="andes-radio__background"><div
+class="andes-radio__outer-circle"></div><div
+class="andes-radio__inner-circle"></div></div></div><label
+class="andes-radio__label" for="residential"><span>Casa</span></label><i
+class="icon-radio"><svg width="14" height="15"
+viewBox="0 0 14 15" fill="rgba(0, 0, 0, 0.8)"
+xmlns="http://www.w3.org/2000/svg"><path
+d="M13.262 7.828L12.0873 6.82625V15H8.61539V10.2316H5.38462V15H1.85958V6.81021L0.790769 7.828L0 7.08143L7 0L14 7.08143L13.262 7.828Z"
+fill="#4A4A4A"></path></svg></i></div></div></div><div
+class="andes-autocomplete"><div
+class="andes-form-control andes-form-control--textfield
+addresses-textfield addresses-textfield--suggest andes-form-control--default"><label
+for="react-aria-4"><span
+class="andes-form-control__label">Telefone / WhatsApp</span></label><div
+class="andes-form-control__control">
+  
+  <input type="tel" id="phone" name="phone" pattern="[0-9]{11}" required placeholder="(99) 999999999"
+
+class="andes-form-control__field"><div
+class="andes-form-control__embedded"></div></div></div><div
+class="andes-dropdown addresses-dropdown andes-dropdown--form"><div
+class="andes-dropdown__popover"><ul
+class="andes-list andes-list--dropdown andes-list--selectable"
+id="react-aria-5"></ul></div></div></div><span><p
+    class="top-label-textbox">Informações adicionais deste
+endereço (opcional)</p></span><div
+class="andes-form-control andes-form-control--textfield
+addresses-textfield addresses-textfield--textbox andes-form-control--multiline andes-form-control--countdown andes-form-control--default"><div
+class="andes-form-control__control"><textarea
+autocomplete="do-not-autofill"
+name="address.aditional" textbox="true"
+rows="1" id="addresses_additional_info"
+class="andes-form-control__field andes-form-control__field--multiline"
+maxlength="128"
+style="overflow-x: hidden; overflow-wrap: break-word; height: 70px;"
+placeholder="Descrição da fachada, pontos de referência, informações de segurança etc."
+aria-label="" aria-describedby="addresses_additional_info-countdown-progress"></textarea><div
+class="andes-form-control__embedded"></div></div><div
+class="andes-form-control__bottom"><span
+id="addresses_additional_info-countdown-progress"
+class="andes-form-control__countdown" role="progressbar"
+aria-valuenow="0" aria-valuemin="0"
+aria-valuemax="128"
+aria-label="Máximo 128 caracteres">0 / 128</span><span
+class="andes-visually-hidden"
+id="addresses_additional_info-count"
+aria-live="polite"
+aria-atomic="true">128 caracteres restantes</span></div></div></div><div
+class="bf-ui-button-container bf-ui-button-container--vertical
+bf-ui-button-container--transparent" data-js="button-container"
+data-id="button_container"><button type="submit"
+class="andes-button bf-ui-button andes-button--large
+andes-button--loud" id="react-aria-6" data-js="button"
+data-id="submit_button"><span
+class="andes-button__content"><span
+class="andes-button__text">Continuar</span></span></button></div></form>
+
+                                    
+                                    
+                                    </section></section></div><div
+            class="secondary-container secondary-container--gray"
+            data-js="secondary-container"
+            data-id="secondary_container">
+
+<!------->
+
+<div data-js="secondary-container-inner_content" class="secondary-container-inner_content secondary-container-inner_content--static"><form class="bf-ui-form" data-id="form" data-js="form"><div class="bf-ui-ticket" data-js="ticket" data-id="ticket">
+  
+   {% for line_item in cart.items %}
+      {% if item.variant.product.id == product.id %}
+  
+  <div style="margin-bottom: 20px;" class="bf-ui-detail-wrapper bf-ui-detail-wrapper--transparent" data-js="detail-wrapper"><div data-js="detail-block" data-id="detail_block" class="bf-ui-detail-block"><div data-js="image" class="bf-ui-detail-block__image"><img style="height: auto;" class="bf-ui-image bf-ui-image--circle-bordered {% if section.settings.img_thumbnail %}img-thumbnail{% else %}rounded{% endif %}" data-src="{{ line_item.image | img_url: img_size, crop: 'center' }}"srcset="{{ line_item.image | img_url: img_size, crop: 'center' }}"
+                                                    loading="lazy"
+                                                    alt="{{ line_item.image.alt | escape }}"
+                                                    width="{{ section.settings.img_width }}"
+                                                    height="{{ section.settings.img_height }}"></div><div class="bf-ui-detail-block__text"><h2 class="bf-ui-detail-block__title" data-js="title" aria-label="Fone De Ouvido Tipo-c Para Xiomi Note 8 Mi 9 Mi 9se S21"><span data-js="rich-text" class="bf-ui-rich-text">{{ line_item.product.title }}</span></h2><div class="bf-ui-detail-block__description" data-js="description"><p class="bf-ui-detail-block__description-text" aria-label="Cor: Branco"><span data-js="rich-text" class="bf-ui-rich-text bf-ui-rich-text--gray"></span></p><p class="bf-ui-detail-block__description-text" aria-label="Quantidade: 1"><span data-js="rich-text" class="bf-ui-rich-text">Quantidade: {{ line_item.quantity }}</span></p></div></div></div></div>
+  
+   {% endif %}{% endfor %}
+  
+  
+  <div class="bf-ui-separator" data-js="separator" data-id="separator"></div><div class="bf-ui-ticket-row" id="ticket_row" data-js="ticket-row"><div class="bf-ui-ticket-row__left-column" data-js="left-column"><p class="bf-ui-ticket-row__left-column--primary-text" data-js="primary-text" aria-label="Produto"><span data-js="rich-text" class="bf-ui-rich-text">Produtos</span></p></div><div class="bf-ui-ticket-row__right-column" data-js="right-column"><div class="bf-ui-ticket-row__right-column__content"><p class="bf-ui-ticket-row__right-column--primary-text" data-js="primary-text" aria-label="89 reais com 99 centavos"><span itemprop="offers" itemscope="" itemtype="http://schema.org/Offer" class="bf-ui-rich-price"><meta itemprop="price" content="89undefined99"><span itemprop="priceCurrency" aria-hidden="true">R$<!-- -->&nbsp;</span><span class="bf-ui-price-small">{% assign total_price = cart.total_price | money_without_currency %}
+{% assign parts = total_price | split: ',' %}
+{% assign integer_part = parts[0] %}
+{% assign decimal_part = parts[1] | default: '00' %}{{ integer_part }}</span><span><span></span><span class="bf-ui-price-small-cents">{{ decimal_part }}</span></span></span></p></div></div></div><div class="bf-ui-ticket-row" id="ticket_row" data-js="ticket-row"><div class="bf-ui-ticket-row__left-column" data-js="left-column"><p class="bf-ui-ticket-row__left-column--primary-text" data-js="primary-text" aria-label="Frete"><span data-js="rich-text" class="bf-ui-rich-text">Frete</span></p></div><div class="bf-ui-ticket-row__right-column" data-js="right-column"><div class="bf-ui-ticket-row__right-column__content"><p class="bf-ui-ticket-row__right-column--primary-text" data-js="primary-text" aria-label="Grátis"><span data-js="rich-text" class="bf-ui-rich-text bf-ui-rich-text--success">Grátis</span></p></div></div></div><div class="bf-ui-separator" data-js="separator" data-id="separator"></div><div class="bf-ui-ticket-row" id="ticket_row" data-js="ticket-row"><div class="bf-ui-ticket-row__left-column" data-js="left-column"><p class="bf-ui-ticket-row__left-column--primary-text" data-js="primary-text" aria-label="Você pagará"><span data-js="rich-text" class="bf-ui-rich-text">Você pagará</span></p></div><div class="bf-ui-ticket-row__right-column" data-js="right-column"><div class="bf-ui-ticket-row__right-column__content"><p class="bf-ui-ticket-row__right-column--primary-text" data-js="primary-text" aria-label="89 reais com 99 centavos"><span itemprop="offers" itemscope="" itemtype="http://schema.org/Offer" class="bf-ui-rich-price bf-ui-rich-price--bold bf-ui-rich-price--mid"><meta itemprop="price" content="89undefined99"><span itemprop="priceCurrency" aria-hidden="true">R$<!-- -->&nbsp;</span><span class="bf-ui-price-small">{% assign total_price = cart.total_price | money_without_currency %}
+{% assign parts = total_price | split: ',' %}
+{% assign integer_part = parts[0] %}
+{% assign decimal_part = parts[1] | default: '00' %}{{ integer_part }}</span><span><span></span><span class="bf-ui-price-small-cents">{{ decimal_part }}</span></span></span></p></div></div></div></div></form></div>
+
+                                      
+<!------->                                 
+                                      
+                                      <div style="display: none;"
+                data-js="secondary-container-inner_content"
+                class="secondary-container-inner_content secondary-container-inner_content--static"><div
+                    class="bf-ui-form" data-id="form" data-js="form"><div
+                        class="bf-ui-ticket" data-js="ticket" data-id="ticket">
+
+
+                    {% for line_item in cart.items %}
+      {% if item.variant.product.id == product.id %}  
+                      <div style="margin-bottom: 20px;" class="bf-ui-detail-wrapper bf-ui-detail-wrapper--transparent"
+                            data-js="detail-wrapper"><div data-js="detail-block" data-id="detail_block"
+                                class="bf-ui-detail-block">
+
+
+
+                              <div data-js="image"
+                                    class="bf-ui-detail-block__image">
+                               <img class="bf-ui-image bf-ui-image--circle-bordered {% if section.settings.img_thumbnail %}img-thumbnail{% else %}rounded{% endif %}" data-src="{{ line_item.image | img_url: img_size, crop: 'center' }}"srcset="{{ line_item.image | img_url: img_size, crop: 'center' }}"                                                     loading="lazy"                                                     alt="{{ line_item.image.alt | escape }}"                                                     width="{{ section.settings.img_width }}"                                                     height="{{ section.settings.img_height }}"></div><div
+                                    class="bf-ui-detail-block__text"><h2 class="bf-ui-detail-block__title"
+                                        data-js="title"
+                                        aria-label="Fone De Ouvido Tune 520bt Preto Jbl"><span
+                                            data-js="rich-text"
+                                            class="bf-ui-rich-text">{{ line_item.product.title }}</span></h2><div
+                                        class="bf-ui-detail-block__description"
+                                        data-js="description"><p
+                                            class="bf-ui-detail-block__description-text"
+                                            aria-label="Quantidade: 1"><span
+                                                data-js="rich-text"
+                                                class="bf-ui-rich-text">Quantidade: {{ line_item.quantity }}</span></p></div></div></div></div><div
+                        class="bf-ui-detail-aside">
+  {% endif %}{% endfor %}
+                                             
+                                                  <div
+                            class="bf-ui-detail-aside__pricing"><div
+                                class="bf-ui-detail-aside__price-wrapper"
+                                data-js="price-wrapper"><div
+                                    class="bf-ui-detail-aside__price"
+                                    data-js="price"></div></div><div
+                                class="bf-ui-detail-aside__payment-options"
+                                data-js="payment-options"><div
+                                    class="bf-ui-text bf-ui-text--small"
+                                    data-js="text"><span
+                                        data-js="rich-text"
+                                        class="bf-ui-rich-text"></span></div></div></div></div></div></div><div
+               style="display: none;" class="secondary-container-secondary_container__content"
+                data-js="secondary-container-secondary_container__content"><div
+                    class="bf-ui-card bf-ui-card--transparent"><div
+                        class="bf-ui-icon bf-ui-icon--success"><svg
+                            viewBox="0 0 24 24"><path
+                                fill="currentColor"
+                                d="M12 22C6.486 22 2 17.514 2 12S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10zm-.98-3.49a1.196 1.196 0 0 1-1.69-1.69L8.5 13.81a1.197 1.197 0 0 1 1.69-1.69L11 13.42l4.81-4.81a1.197 1.197 0 0 1 1.69 1.69L11.69 13.42z"></path></svg></div><div
+                        class="bf-ui-text"><h2 class="bf-ui-title"
+                            data-js="title"><span
+                                data-js="rich-text"
+                                class="bf-ui-rich-text">Compra realizada com
+                                    sucesso</span></h2></div><div
+                        class="bf-ui-text bf-ui-text--small"><p
+                            class="bf-ui-paragraph"
+                            data-js="paragraph"><span
+                                data-js="rich-text"
+                                class="bf-ui-rich-text">Você receberá um e-mail com os detalhes da compra e o código de
+                                    rastreamento do produto.</span></p></div></div></div></div></div></div></main></body></html>
+<!-------->
+   <script>
+        const cepInput = document.getElementById('address_cep');
+        const estadoInput = document.getElementById('address_estado');
+        const cidadeInput = document.getElementById('address_cidade');
+        const bairroInput = document.getElementById('address_bairro');
+        const ruaInput = document.getElementById('address_rua');
+        const numeroInput = document.getElementById('addresses_street_number');
+
+        cepInput.addEventListener('input', async () => {
+            const cep = cepInput.value.replace(/\D/g, '');
+
+            if (cep.length === 8) {
+                const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+                const data = await response.json();
+
+                if (!data.erro) {
+                    estadoInput.value = data.uf;
+                    cidadeInput.value = data.localidade;
+                    bairroInput.value = data.bairro;
+                    ruaInput.value = data.logradouro;
+                } else {
+                    estadoInput.value = '';
+                    cidadeInput.value = '';
+                    bairroInput.value = '';
+                    ruaInput.value = '';
+                }
+            } else {
+                estadoInput.value = '';
+                cidadeInput.value = '';
+                bairroInput.value = '';
+                ruaInput.value = '';
+            }
+        });
+    </script>

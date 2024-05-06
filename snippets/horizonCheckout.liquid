@@ -1,0 +1,116 @@
+<style>
+    #checkout-secure-loader {
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        display: none;
+        background: #fff;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+    }
+
+    div.checkout-secure-loader-inside {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    div.loader-wrapper {
+        position: relative;
+        height: 110px;
+        width: 110px;
+    }
+
+    div.loader-around {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border: 5px solid #eee;
+        border-top: 5px solid #2734e4;
+        border-radius: 50%;
+        box-sizing: border-box;
+        animation: rotate 2s linear infinite;
+    }
+
+    .loader-icon-wrapper {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .loader-icon-wrapper svg {
+        position: relative;
+        width: 40px;
+        height: 40px;
+    }
+
+    .loader-info-text {
+        position: relative;
+        padding-top: 30px;
+        color: rgb(54, 62, 68);
+        font-size: 16px;
+    }
+
+    @keyframes rotate {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+</style>
+
+<div id="checkout-secure-loader">
+    <div class="checkout-secure-loader-inside">
+        <div class="loader-wrapper">
+            <div class="loader-around"></div>
+            <div class="loader-icon-wrapper">
+                <svg fill="#eee" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path
+                        d="M18 10v-4c0-3.313-2.687-6-6-6s-6 2.687-6 6v4h-3v14h18v-14h-3zm-5 7.723v2.277h-2v-2.277c-.595-.347-1-.984-1-1.723 0-1.104.896-2 2-2s2 .896 2 2c0 .738-.404 1.376-1 1.723zm-5-7.723v-4c0-2.206 1.794-4 4-4 2.205 0 4 1.794 4 4v4h-8z">
+                    </path>
+                </svg>
+            </div>
+        </div>
+        <p class="loader-info-text">Conectando em ambiente seguro...</p>
+    </div>
+</div>
+
+<script>
+    if (typeof jQuery == 'undefined') {
+        document.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></' + 'script>');
+    }
+</script>
+
+<script>
+    // Data that comes from Horizon Checkout
+    var checkoutUrl = 'https://checkout.horizonbank.com.br';
+    var checkoutSkipCart = true;
+    var checkoutApiUrl = 'https://api.horizonbank.com.br';
+    var shopUUID = '4935e109-4c21-4a1a-94fb-3877a31671c8';
+
+    // Data that comes from Shopify
+    var shopSecureUrl = '{{shop.secure_url}}';
+    var shopShopifyDomain = '{{shop.permanent_domain}}';
+    var shopTemplateName = '{{ template.name }}';
+    
+    // Adding Horizon Checkout Redirect Script
+    var script = document.createElement("script");
+    script.type = "application/javascript";
+    script.src = 'https://content.horizonbank.com.br/_main/shopify_redirect.js';
+    document.body.appendChild(script);
+</script>

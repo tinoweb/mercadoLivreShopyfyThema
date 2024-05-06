@@ -1,0 +1,44 @@
+<style>
+  .selected-variant {
+    border: 2px solid;
+    border-radius: 4px;
+  }
+</style>
+{% if product.variants.size > 1 %}
+
+<div class="ui-pdp-variations" style="margin-top: 24px;">
+  <div class="ui-pdp-variations__picker">
+    <div class="ui-pdp-variations__title">
+      <p class="ui-pdp-variations__label ui-pdp-color--BLACK">
+        {{ product.options.first | escape }}:
+        <span class="ui-pdp-variations__selected-label ui-pdp-color--BLACK">
+          <span id="selected-variant-value" class="ui-pdp-variations__selected-text" style="margin-right: 4px;"></span>
+        </span>
+      </p>
+    </div>
+    <div class="ui-pdp-variations__picker-default-container">
+      {% for variant in product.variants %}
+        <a href="#" class="ui-pdp-thumbnail ui-pdp-variations--thumbnail ui-pdp-thumbnail--NONE {% if forloop.first %}selected-variant{% endif %}"
+          title="{{ variant.option1 }}" onclick="updateSelectedVariant(this, '{{ variant.option1 }}'); return false;">
+          <div class="ui-pdp-thumbnail__container">
+            <p class="ui-pdp-thumbnail__label">{{ variant.option1 }}</p>
+           
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endif %}
+<script>
+  function updateSelectedVariant(element, variantValue) {
+    const allOptions = document.querySelectorAll('.ui-pdp-thumbnail');
+    allOptions.forEach(option => option.classList.remove('selected-variant'));
+
+    element.classList.add('selected-variant');
+
+    document.getElementById("selected-variant-value").textContent = variantValue;
+  }
+</script>
+
+
